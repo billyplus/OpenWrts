@@ -66,7 +66,7 @@
 <br>
 
 ### 🎯固件默认设置
-- 路由器地址: `192.168.10.1`
+- 路由器地址: `192.168.31.1`
 - 默认用户名: `root`
 - 默认密码  : `password`
 
@@ -81,17 +81,7 @@
 
 ✨ Arm集成所有openwrt的USB驱动
 
-✨ ~~集成Python3.x(带pip)环境~~
-
-✨ 集成Docker-CE
-
-✨ ~~集成Node.js(14.xLTS 带npm、yarn)~~
-
 ✨ 全新的 [Them](https://github.com/jerrykuku/luci-theme-argon)
-
-✨ x86_64 vmdk固件集成vm-tools
-
-✨ x86_64 iso格式镜像
 
 ✨ x86_64 Lite版本(必要插件&应用商店)
 
@@ -102,9 +92,6 @@
 - PassWall2 / SSR Plus / OpenClash
 - AdGuard Home
 - Mentohust
-- ~~luci-app-vssr~~
-- luci-adbyby-plus
-- luci-app-unblockmusic
 - luci-app-ddns
 - luci-app-pushbot (全能推送)
 - luci-app-onliner
@@ -112,19 +99,10 @@
 - luci-app-turboacc
 - luci-app-upnp
 - luci-app-netdata
-- luci-usb-printer
-- luci-app-nps
-- luci-app-frpc
-- luci-app-n2n
-- luci-app-syncdial (多播插件)
 - luci-app-turboacc
-- luci-app-kms
-- luci-app-docker
-- luci-app-serverchan
 - luci-app-control-timewol (定时wol唤醒)
-- luci-app-aliyundrive-webdav (阿里云盘)
 - luci-app-filebrowser
-- luci-app-nfs   
+- luci-app-nfs
 ......
 
 <br>
@@ -142,9 +120,9 @@ filetree
 │  ├── x86_64.yml
 │  ├── x86_64Lite.yml
 │  ├── update-checker.yml
-├── /configs/ (配置文件目录)   
-│  ├── /luci/ (app插件配置)   
-│  |  ├── Lite.config (简洁配置)   
+├── /configs/ (配置文件目录)
+│  ├── /luci/ (app插件配置)
+│  |  ├── Lite.config (简洁配置)
 │  |  ├── Standard.config (标准配置 大量插件)
 │  ├── RPi3.config
 │  ├── RPi4.config
@@ -156,7 +134,7 @@ filetree
 
 Tips:
 x86.conf | RPi4.config - 该类型配置文件主要为机型配置文件
-Standard.conf / Lite.conf - 主要用于配置固件插件应用 
+Standard.conf / Lite.conf - 主要用于配置固件插件应用
 ```
 <br>
 
@@ -168,9 +146,9 @@ Standard.conf / Lite.conf - 主要用于配置固件插件应用
 5. 最后根据个人喜好修改 ```update-checker.yml``` 需自行添加 ```Actions secrets``` (触发自动编译)
 
 ### 注意事项：
-📌 修改默认系统参数 👉 ```configure.sh```   
-📌 添加其它Luci插件 👉 ```package.sh```   
-📌 插件 / 应用配置文件 👉 ```configs/Standard.config```   
+📌 修改默认系统参数 👉 ```configure.sh```
+📌 添加其它Luci插件 👉 ```package.sh```
+📌 插件 / 应用配置文件 👉 ```configs/Standard.config```
 <br>
 
 ## 固件预览
