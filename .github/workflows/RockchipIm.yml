@@ -1,4 +1,4 @@
-name: Rockchip
+name: Rockchip-Immortalwrt
 
 on:
   repository_dispatch:
