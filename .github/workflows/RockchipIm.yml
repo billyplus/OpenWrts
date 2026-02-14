@@ -141,7 +141,7 @@ jobs:
         cd openwrt
         echo -e "$(nproc) thread compile"
         make tools/install
-        make toolchain/install
+        make toolchain/install V=s
         make package/system/usign/host/compile
         make -j$(nproc) V=s || make -j1 V=s
         echo "status=success" >> $GITHUB_OUTPUT
