@@ -1,11 +1,11 @@
-name: Rockchip-Immortalwrt
+name: Rockchip
 
 on:
   repository_dispatch:
   workflow_dispatch:
 
 env:
-  OPNAME: 'R66S immortalwrt'
+  OPNAME: 'R66S'
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: openwrt-24.10
   FEEDS_CONF: feeds.conf.default
@@ -71,8 +71,7 @@ jobs:
       run: |
         sudo rm -rf /etc/apt/sources.list.d/*
         sudo -E apt-get -qq update
-        sudo -E apt-get -qq install $(curl -fsSL bit.ly/3AS48v1)
-        sudo -E apt-get -qq install python3-pyelftools
+        sudo -E apt-get -qq install $(curl -fsSL https://raw.githubusercontent.com/billyplus/OpenWrts/refs/heads/main/openwrt-env)
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
         sudo rm -rf /etc/apt/sources.list.d/* /usr/local/lib/android /opt/ghc /usr/share/dotnet /usr/local/graalvm /usr/local/.ghcup \
@@ -189,9 +188,7 @@ jobs:
       if: steps.compile.outputs.status == 'success' && !cancelled()
       run: |
         echo "![](https://img.shields.io/github/downloads/${{ github.repository }}/${{ steps.tag.outputs.release_tag }}/total?style=flat-square)" >> release.txt
-        echo "- FastRhino R68S" >> release.txt
-        echo "- FriendlyARM NanoPi R2S | R4S | R5C | R5S " >> release.txt
-        echo "- Xunlong Orange Pi R1 Plus" >> release.txt
+        echo "- FastRhino R66S" >> release.txt
 
     - name: Upload firmware to release
       uses: softprops/action-gh-release@v1
