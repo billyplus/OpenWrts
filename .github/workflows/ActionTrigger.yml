@@ -1,8 +1,8 @@
 name: ActionTrigger
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/immortalwrt/immortalwrt
+  REPO_BRANCH: openwrt-24.10
   UPLOAD_RELEASE: true
 
 on:
@@ -17,7 +17,7 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-      
+
     - name: AutoTrigger
       uses: bigbugcc/ActionBot@main
 
